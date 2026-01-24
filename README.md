@@ -160,5 +160,5 @@ http://127.0.0.1:8000/docs
 
 ## Disclaimer
 
-> Some portions of this codebase were developed with the assistance of AI tools.  
+> Few portions of this codebase were developed with the assistance of AI tools.  
 > This was done to meet a **strict 2-day project deadline**.

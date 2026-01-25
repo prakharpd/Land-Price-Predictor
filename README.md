@@ -1,13 +1,13 @@
 # Segment Forecast API  
 ### Quarterly Real Estate Price Prediction using Machine Learning & FastAPI
 
-This project predicts **average real estate prices** for a given:
+This project predicts **real estate prices** for a given:
 
 > **Locality • City • Property Type • Quarter • Year**
 
 The system follows a hybrid logic:
 
-- **Lookup Mode:** If the exact row exists in the dataset, return the real `Average Price`.
+- **Lookup Mode:** If the exact row exists in the dataset, return the real `Price`.
 - **Forecast Mode:** If missing, predict using a trained ML model based only on past data.
 
 ---
@@ -59,7 +59,7 @@ Internally, time is converted into `quarter_id` and `time_idx`.
 
 ## Target Variable
 
-🎯 **Average Price**
+🎯 **Price**
 
 - Returned directly from CSV if available.
 - Predicted using ML if missing or future.
@@ -95,7 +95,7 @@ Exact row exists?                    Exact row missing?
 (Year + Quarter match)               (past missing or future)
           |                              |
           v                              v
-Return CSV Average Price             Build features from past-only history
+Return CSV Price             Build features from past-only history
 (mode = "lookup")                    (lags, rolling stats, seasonality)
                                          |
                                          v
@@ -103,7 +103,7 @@ Return CSV Average Price             Build features from past-only history
                                   (mode = "forecast")
                                          |
                                          v
-                               Return predicted Average Price + meta
+                               Return predicted Price + meta
 ```
 
 ---
